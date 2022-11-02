@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/containerScientificCal"
     android:visibility="gone"
     tools:context=".ui.fragments.CalculatorFragment">
 
@@ -31,16 +30,16 @@
                 android:gravity="center">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabClear"
+                    android:id="@+id/fabAllClearSC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
                     android:contentDescription="clear"
-                    android:src="@drawable/cancel"
+                    android:src="@drawable/all_clear"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="25dp"
+                    app:maxImageSize="24dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -80,7 +79,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="25dp"
+                    app:maxImageSize="26dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -100,7 +99,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="28dp"
+                    app:maxImageSize="30dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -209,7 +208,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="21dp"
+                    app:maxImageSize="20dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -274,11 +273,11 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
                     android:contentDescription="close"
-                    android:src="@drawable/parenthesis"
+                    android:src="@drawable/open_bracket"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="27dp"
+                    app:maxImageSize="29dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -338,7 +337,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="18dp"
+                    app:maxImageSize="17dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -367,7 +366,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="24dp"
+                    app:maxImageSize="21dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -473,7 +472,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="25dp"
+                    app:maxImageSize="22dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -605,7 +604,7 @@
                         app:borderWidth="0dp"
                         app:elevation="0dp"
                         app:fabSize="mini"
-                        app:maxImageSize="18dp"
+                        app:maxImageSize="17dp"
                         app:tint="#FF9800" />
                 </LinearLayout>
 
@@ -652,7 +651,7 @@
                         app:borderWidth="0dp"
                         app:elevation="0dp"
                         app:fabSize="mini"
-                        app:maxImageSize="18dp"
+                        app:maxImageSize="17dp"
                         app:tint="#FF9800" />
                 </LinearLayout>
 
@@ -785,7 +784,7 @@
                     android:layout_height="match_parent"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="@drawable/cardview_click_effect"
+                    android:foreground="@drawable/card_view_click_effect"
                     android:gravity="center"
                     app:cardBackgroundColor="#FF9800"
                     app:cardCornerRadius="16dp">

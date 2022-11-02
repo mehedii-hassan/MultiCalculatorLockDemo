@@ -27,6 +27,7 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent=".5" />
 
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabCConverter"
             android:layout_width="wrap_content"
@@ -37,15 +38,15 @@
             android:src="@drawable/currency_converter"
             app:borderWidth="0dp"
             app:elevation="0dp"
-            app:fabSize="mini"
+            app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:maxImageSize="25dp"
+            app:maxImageSize="30dp"
             app:tint="#FF9800" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabScientificCalculator"
+            android:id="@+id/fabNormalToScientificCal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -54,11 +55,28 @@
             android:src="@drawable/scientific_cal_icon"
             app:borderWidth="0dp"
             app:elevation="0dp"
-            app:fabSize="mini"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/glTop"
+            app:layout_constraintEnd_toStartOf="@+id/fabBMIToBMR"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="30dp"
+            app:tint="#FF9800" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabBMIToBMR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/white"
+            android:contentDescription="bmi bmr"
+            android:src="@drawable/bmi"
+            app:borderWidth="0dp"
+            app:elevation="0dp"
+            app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toStartOf="@+id/fabCConverter"
             app:layout_constraintTop_toTopOf="parent"
-            app:maxImageSize="25dp"
+            app:maxImageSize="30dp"
             app:tint="#FF9800" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,48 +84,46 @@
             android:layout_height="0dp"
             android:background="#DCFBFAFA"
             app:layout_constraintBottom_toTopOf="@id/glMiddle"
-            app:layout_constraintTop_toBottomOf="@+id/fabCConverter">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/glInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent=".6" />
+            app:layout_constraintTop_toBottomOf="@+id/glTop">
 
             <TextView
-                android:id="@+id/tvInput"
+                android:id="@+id/tvInputString"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:cursorVisible="true"
                 android:gravity="end"
-                android:padding="10dp"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/glInput" />
+                android:padding="2dp"
+                android:textSize="50sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvOutput" />
 
             <TextView
+                android:id="@+id/tvOutput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="40dp"
                 android:gravity="end"
-                android:hint="output"
-                android:padding="10dp"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/tvInput" />
+                android:padding="2dp"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@+id/dividerId" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerId"
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                app:dividerColor="#A39A8D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="50dp"
-            android:layout_height="3dp"
-            app:dividerColor="#A39A8D"
-            app:layout_constraintBottom_toTopOf="@+id/glMiddle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerCalculator"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -115,12 +131,12 @@
 
             <!--normal calculator include-->
             <include
-                android:id="@+id/normalCalculator"
+                android:id="@+id/normalCalculatorId"
                 layout="@layout/normal_calculator_layout" />
 
             <!--scientific calculator include-->
             <include
-                android:id="@+id/scientificCalculator"
+                android:id="@+id/scientificCalculatorId"
                 layout="@layout/scientific_calculator_layout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
