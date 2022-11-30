@@ -137,7 +137,7 @@
             <!--scientific calculator include-->
             <include
                 android:id="@+id/scientificCalculatorId"
-                layout="@layout/scientific_calculator_layout" />
+                layout="@layout/sci_cal_layout_2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

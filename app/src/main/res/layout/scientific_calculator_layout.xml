@@ -18,10 +18,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:padding="2dp"
-            android:weightSum="5"
-            android:baselineAligned="false">
+            android:weightSum="5">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="24dp"
+                    app:maxImageSize="29dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -50,16 +50,16 @@
                 android:gravity="center">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabDivideByX"
+                    android:id="@+id/fabTan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
-                    android:contentDescription="divide by x"
-                    android:src="@drawable/divide_by_x"
+                    android:contentDescription="tan"
+                    android:src="@drawable/tan"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="25dp"
+                    app:maxImageSize="34dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -79,7 +79,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="26dp"
+                    app:maxImageSize="32dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -99,7 +99,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="30dp"
+                    app:maxImageSize="38dp"
                     app:tint="#FF9800" />
             </LinearLayout>
 
@@ -119,7 +119,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="23dp"
+                    app:maxImageSize="28dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -148,8 +148,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="30dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="34dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -168,8 +168,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="20dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="26dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -179,17 +179,17 @@
                 android:gravity="center">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabTan"
+                    android:id="@+id/fabByX"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
-                    android:contentDescription="tan"
-                    android:src="@drawable/tan"
+                    android:contentDescription="divide by x"
+                    android:src="@drawable/divide_by_x"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="25dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="29dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -199,17 +199,17 @@
                 android:gravity="center">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabModulusSC"
+                    android:id="@+id/fabPISc2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
-                    android:contentDescription="modulus"
-                    android:src="@drawable/modulus"
+                    android:contentDescription="pi"
+                    android:src="@drawable/pi"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
                     app:maxImageSize="20dp"
-                    app:tint="#FF9800" />
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -228,7 +228,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="20dp"
+                    app:maxImageSize="24dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -257,8 +257,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="20dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="22dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -277,8 +277,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="29dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="34dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -297,8 +297,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="29dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="34dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -317,8 +317,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="25dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="34dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -337,7 +337,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="17dp"
+                    app:maxImageSize="20dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -366,8 +366,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="21dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="23dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -424,6 +424,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
+                    app:maxImageSize="25dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -443,7 +444,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="18dp"
+                    app:maxImageSize="22dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -472,8 +473,8 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="22dp"
-                    app:tint="#FF9800" />
+                    app:maxImageSize="26dp"
+                    app:tint="#605C5C" />
             </LinearLayout>
 
             <LinearLayout
@@ -549,7 +550,7 @@
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"
-                    app:maxImageSize="18dp"
+                    app:maxImageSize="24dp"
                     app:tint="#605C5C" />
             </LinearLayout>
 
@@ -576,26 +577,7 @@
                     android:gravity="center">
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/fabTanSC1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/white"
-                        android:contentDescription="parenthesis"
-                        android:src="@drawable/tan"
-                        app:borderWidth="0dp"
-                        app:elevation="0dp"
-                        app:fabSize="mini"
-                        app:maxImageSize="27dp"
-                        app:tint="#FF9800" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/fabPI"
+                        android:id="@+id/fabPISc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
@@ -604,7 +586,26 @@
                         app:borderWidth="0dp"
                         app:elevation="0dp"
                         app:fabSize="mini"
-                        app:maxImageSize="17dp"
+                        app:maxImageSize="20dp"
+                        app:tint="#605C5C" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fabModulusSC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:contentDescription="modulus"
+                        android:src="@drawable/modulus"
+                        app:borderWidth="0dp"
+                        app:elevation="0dp"
+                        app:fabSize="mini"
+                        app:maxImageSize="24dp"
                         app:tint="#FF9800" />
                 </LinearLayout>
 
@@ -642,17 +643,17 @@
                     android:gravity="center">
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/fabPI1"
+                        android:id="@+id/fabDoubleZero"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
-                        android:contentDescription="pi"
-                        android:src="@drawable/pi"
+                        android:contentDescription="Double zero"
+                        android:src="@drawable/double_0"
                         app:borderWidth="0dp"
                         app:elevation="0dp"
                         app:fabSize="mini"
-                        app:maxImageSize="17dp"
-                        app:tint="#FF9800" />
+                        app:maxImageSize="36dp"
+                        app:tint="#605C5C" />
                 </LinearLayout>
 
                 <!--<LinearLayout
@@ -763,6 +764,7 @@
                         app:borderWidth="0dp"
                         app:elevation="0dp"
                         app:fabSize="mini"
+                        app:maxImageSize="30dp"
                         app:tint="#605C5C" />
                 </LinearLayout>
 
@@ -787,7 +789,7 @@
                     android:foreground="@drawable/card_view_click_effect"
                     android:gravity="center"
                     app:cardBackgroundColor="#FF9800"
-                    app:cardCornerRadius="16dp">
+                    app:cardCornerRadius="10dp">
 
                     <ImageView
                         android:layout_width="19dp"
