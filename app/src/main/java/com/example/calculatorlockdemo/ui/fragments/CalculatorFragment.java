@@ -1,6 +1,7 @@
 package com.example.calculatorlockdemo.ui.fragments;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.calculatorlockdemo.R;
 import com.example.calculatorlockdemo.databinding.FragmentCalculatorBinding;
+import com.example.calculatorlockdemo.utils.Constants;
 import com.faendir.rhino_android.RhinoAndroidHelper;
 
 import org.mozilla.javascript.Context;
@@ -46,7 +48,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         //super.onViewCreated(view, savedInstanceState);
 
         //Set onclick listener for view ----------------------------------
-        setOnClickListener(binding);
+        setOnClickListener(binding, this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -118,7 +120,6 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             userInputString = "";
         }
 
-
     }
 
     //Create user input string for calculation----------------------------
@@ -167,6 +168,15 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         if (!result.equals("Err")) {
             binding.tvOutput.setText(result);
         }
+        binding.includeNormalCalculator.ivEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!result.equals("Err")) {
+                    binding.tvInputString.setText(result);
+                    binding.tvOutput.setText("");
+                }
+            }
+        });
     }
 
     private boolean checkPointOrNot(char c) {
@@ -208,40 +218,99 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         }
     }
 
-    private void setOnClickListener(FragmentCalculatorBinding binding) {
+    private void setOnClickListener(FragmentCalculatorBinding binding, View.OnClickListener onClickListener) {
+        binding.includeNormalCalculator.fabAllClear.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabAllClearSC.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabLog.setImageBitmap(Constants.textAsBitmap("log", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabINV.setImageBitmap(Constants.textAsBitmap("INV", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabCot.setImageBitmap(Constants.textAsBitmap("cot", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabSin.setImageBitmap(Constants.textAsBitmap("sin", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabCos.setImageBitmap(Constants.textAsBitmap("cos", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabTan.setImageBitmap(Constants.textAsBitmap("tan", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabFactorial.setImageBitmap(Constants.textAsBitmap("X!", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabByX.setImageBitmap(Constants.textAsBitmap("1/x", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabLN.setImageBitmap(Constants.textAsBitmap("ln", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabSquare.setImageBitmap(Constants.textAsBitmap("X²", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabOpenParenthesis.setImageBitmap(Constants.textAsBitmap("(", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabCloseParenthesis.setImageBitmap(Constants.textAsBitmap(")", 40, Color.parseColor("#605C5C")));
+        binding.includeScientificCalculator.fabE.setImageBitmap(Constants.textAsBitmap("e", 40, Color.parseColor("#605C5C")));
         //Change calculator mode from normal to scientific or scientific to normal--------------------------
-        binding.fabNormalToScientificCal.setOnClickListener(view1 -> {
-            if (showNormalCalculator) {
-                binding.scientificCalculatorId.setVisibility(View.VISIBLE);
-                binding.normalCalculatorId.containerNormalCal.setVisibility(View.INVISIBLE);
-                showNormalCalculator = false;
-                binding.fabNormalToScientificCal.setImageResource(R.drawable.normal_cal_icon);
-            } else {
-                binding.scientificCalculatorId.setVisibility(View.INVISIBLE);
-                binding.normalCalculatorId.containerNormalCal.setVisibility(View.VISIBLE);
-                binding.fabNormalToScientificCal.setImageResource(R.drawable.scientific_cal_icon);
-                showNormalCalculator = true;
+        binding.fabNormalToScientificCal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (showNormalCalculator) {
+                    binding.includeScientificCalculator.containerScientificCal.setVisibility(View.VISIBLE);
+                    binding.includeNormalCalculator.containerNormalCal.setVisibility(View.INVISIBLE);
+                    showNormalCalculator = false;
+                    binding.tvInputString.setText("");
+                    binding.tvOutput.setText("");
+                    binding.fabNormalToScientificCal.setImageResource(R.drawable.normal_cal_icon);
+                } else {
+                    binding.includeScientificCalculator.containerScientificCal.setVisibility(View.INVISIBLE);
+                    binding.includeNormalCalculator.containerNormalCal.setVisibility(View.VISIBLE);
+                    binding.fabNormalToScientificCal.setImageResource(R.drawable.scientific_cal_icon);
+                    showNormalCalculator = true;
+                    binding.tvInputString.setText("");
+                    binding.tvOutput.setText("");
 
+                }
             }
         });
-        binding.normalCalculatorId.fabOne.setOnClickListener(this);
-        binding.normalCalculatorId.fabTwo.setOnClickListener(this);
-        binding.normalCalculatorId.fabThree.setOnClickListener(this);
-        binding.normalCalculatorId.fabFour.setOnClickListener(this);
-        binding.normalCalculatorId.fabFive.setOnClickListener(this);
-        binding.normalCalculatorId.fabSix.setOnClickListener(this);
-        binding.normalCalculatorId.fabSeven.setOnClickListener(this);
-        binding.normalCalculatorId.fabEight.setOnClickListener(this);
-        binding.normalCalculatorId.fabNine.setOnClickListener(this);
-        binding.normalCalculatorId.fabAddition.setOnClickListener(this);
-        binding.normalCalculatorId.fabSubtraction.setOnClickListener(this);
-        binding.normalCalculatorId.fabDivision.setOnClickListener(this);
-        binding.normalCalculatorId.fabMultiplication.setOnClickListener(this);
-        binding.normalCalculatorId.fabDeleteLeft.setOnClickListener(this);
-        binding.normalCalculatorId.fabAllClear.setOnClickListener(this);
-        binding.normalCalculatorId.fabModulus.setOnClickListener(this);
-        binding.normalCalculatorId.fabZero.setOnClickListener(this);
-        binding.normalCalculatorId.fabDot.setOnClickListener(this);
-        binding.normalCalculatorId.ivEqual.setOnClickListener(this);
+        //set on click listener in normal calculator----------------------------------
+        binding.includeNormalCalculator.fabOne.setOnClickListener(this);
+        binding.includeNormalCalculator.fabTwo.setOnClickListener(this);
+        binding.includeNormalCalculator.fabThree.setOnClickListener(this);
+        binding.includeNormalCalculator.fabFour.setOnClickListener(this);
+        binding.includeNormalCalculator.fabFive.setOnClickListener(this);
+        binding.includeNormalCalculator.fabSix.setOnClickListener(this);
+        binding.includeNormalCalculator.fabSeven.setOnClickListener(this);
+        binding.includeNormalCalculator.fabEight.setOnClickListener(this);
+        binding.includeNormalCalculator.fabNine.setOnClickListener(this);
+        binding.includeNormalCalculator.fabAddition.setOnClickListener(this);
+        binding.includeNormalCalculator.fabSubtraction.setOnClickListener(this);
+        binding.includeNormalCalculator.fabDivision.setOnClickListener(this);
+        binding.includeNormalCalculator.fabMultiplication.setOnClickListener(this);
+        binding.includeNormalCalculator.fabDeleteLeft.setOnClickListener(this);
+        binding.includeNormalCalculator.fabAllClear.setOnClickListener(this);
+        binding.includeNormalCalculator.fabModulus.setOnClickListener(this);
+        binding.includeNormalCalculator.fabZero.setOnClickListener(this);
+        binding.includeNormalCalculator.fabDot.setOnClickListener(this);
+        binding.includeNormalCalculator.ivEqual.setOnClickListener(this);
+
+        //set on click listener in scientific calculator--------------------------------------
+        binding.includeScientificCalculator.fabZeroSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabOneSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabTwoSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabThreeSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabFourSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabFiveSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabSixSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabSevenSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabEightSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabNineSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabDotSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabModulusSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabPISc.setOnClickListener(this);
+        binding.includeScientificCalculator.fabSquare.setOnClickListener(this);
+        binding.includeScientificCalculator.fabLN.setOnClickListener(this);
+        binding.includeScientificCalculator.fabFactorial.setOnClickListener(this);
+        binding.includeScientificCalculator.fabLog.setOnClickListener(this);
+        binding.includeScientificCalculator.fabTan.setOnClickListener(this);
+        binding.includeScientificCalculator.fabCot.setOnClickListener(this);
+        binding.includeScientificCalculator.fabRoot.setOnClickListener(this);
+        binding.includeScientificCalculator.fabOpenParenthesis.setOnClickListener(this);
+        binding.includeScientificCalculator.fabCloseParenthesis.setOnClickListener(this);
+        binding.includeScientificCalculator.fabByX.setOnClickListener(this);
+        binding.includeScientificCalculator.fabSin.setOnClickListener(this);
+        binding.includeScientificCalculator.fabCos.setOnClickListener(this);
+        binding.includeScientificCalculator.fabINV.setOnClickListener(this);
+        binding.includeScientificCalculator.fabAllClearSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabINV.setOnClickListener(this);
+        binding.includeScientificCalculator.fabDeleteLeftSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabDivisionSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabMultiplicationSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabSubtractionSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabAdditionSC.setOnClickListener(this);
+        binding.includeScientificCalculator.fabEqualSC.setOnClickListener(this);
     }
 }

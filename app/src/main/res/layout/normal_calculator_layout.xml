@@ -36,11 +36,10 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
                         android:contentDescription="clear"
-                        android:src="@drawable/all_clear"
                         app:borderWidth="0dp"
                         app:elevation="0dp"
                         app:fabSize="normal"
-                        app:maxImageSize="30dp"
+                        app:maxImageSize="32dp"
                         app:tint="#FF9800" />
                 </LinearLayout>
 
@@ -456,10 +455,10 @@
                             android:src="@drawable/equal_sign" />
                     </LinearLayout>-->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/ivEqual"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:clickable="true"
-                        android:id="@+id/ivEqual"
                         android:focusable="true"
                         android:foreground="@drawable/card_view_click_effect"
                         android:gravity="center"

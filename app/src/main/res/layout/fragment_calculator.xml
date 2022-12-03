@@ -42,7 +42,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:maxImageSize="30dp"
             app:tint="#FF9800" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -59,7 +58,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toStartOf="@+id/fabBMIToBMR"
             app:layout_constraintTop_toTopOf="parent"
-            app:maxImageSize="30dp"
             app:tint="#FF9800" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -76,7 +74,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toStartOf="@+id/fabCConverter"
             app:layout_constraintTop_toTopOf="parent"
-            app:maxImageSize="30dp"
             app:tint="#FF9800" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,13 +128,13 @@
 
             <!--normal calculator include-->
             <include
-                android:id="@+id/normalCalculatorId"
+                android:id="@+id/includeNormalCalculator"
                 layout="@layout/normal_calculator_layout" />
 
             <!--scientific calculator include-->
             <include
-                android:id="@+id/scientificCalculatorId"
-                layout="@layout/sci_cal_layout_2" />
+                android:id="@+id/includeScientificCalculator"
+                layout="@layout/scientific_calculator_layout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
