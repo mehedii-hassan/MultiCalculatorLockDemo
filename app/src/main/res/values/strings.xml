@@ -2,4 +2,13 @@
     <string name="app_name">Calculator</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desc_underweight">A BMI of less than 18.5 indicates that you are underweight,so
+     you may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice
+    </string>
+    <string name="desc_healthy_weight">A BMI indicates that you are at a healthy weight for your
+    height. By maintaining a healthy weight,you lower your risk of developing serious health problems.
+    </string>
+    <string name="desc_overweight">A BMI of over 30 indicates that you are heavily overweight. Your health may be at risk if you do not
+    lose weight. you are recommended to talk to your doctor or a dietitian for advice.</string>
+    <string name="healthy_weight_range">108-146lb</string>
 </resources>

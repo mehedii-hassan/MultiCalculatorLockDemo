@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#FF9800" />
+            app:tint="#E91E63" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabNormalToScientificCal"
@@ -56,12 +56,12 @@
             app:elevation="0dp"
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
-            app:layout_constraintEnd_toStartOf="@+id/fabBMIToBMR"
+            app:layout_constraintEnd_toStartOf="@+id/fabBMI"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#FF9800" />
+            app:tint="#605C5C" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabBMIToBMR"
+            android:id="@+id/fabBMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -74,7 +74,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toStartOf="@+id/fabCConverter"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#FF9800" />
+            app:tint="#03A9F4" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

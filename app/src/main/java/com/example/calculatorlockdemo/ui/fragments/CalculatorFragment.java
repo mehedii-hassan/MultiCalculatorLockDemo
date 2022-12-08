@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,6 +50,14 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
 
         //Set onclick listener for view ----------------------------------
         setOnClickListener(binding, this);
+
+        binding.fabBMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Navigation.findNavController(v).navigate(R.id.BMIFragment);
+            }
+        });
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -57,54 +66,71 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
 
         switch (view.getId()) {
             case R.id.fabZero:
+            case R.id.fabZeroSC:
                 createUserInputString("0");
                 break;
             case R.id.fabOne:
+            case R.id.fabOneSC:
                 createUserInputString("1");
                 break;
             case R.id.fabTwo:
+            case R.id.fabTwoSC:
                 createUserInputString("2");
                 break;
             case R.id.fabThree:
+            case R.id.fabThreeSC:
                 createUserInputString("3");
                 break;
             case R.id.fabFour:
+            case R.id.fabFourSC:
                 createUserInputString("4");
                 break;
             case R.id.fabFive:
+            case R.id.fabFiveSC:
                 createUserInputString("5");
                 break;
             case R.id.fabSix:
+            case R.id.fabSixSC:
                 createUserInputString("6");
                 break;
             case R.id.fabSeven:
+            case R.id.fabSevenSC:
                 createUserInputString("7");
                 break;
             case R.id.fabEight:
+            case R.id.fabEightSC:
                 createUserInputString("8");
                 break;
             case R.id.fabNine:
+            case R.id.fabNineSC:
                 createUserInputString("9");
                 break;
             case R.id.fabAddition:
+            case R.id.fabAdditionSC:
                 createUserInputString("+");
                 break;
             case R.id.fabSubtraction:
+            case R.id.fabSubtractionSC:
                 createUserInputString("-");
                 break;
             case R.id.fabMultiplication:
+            case R.id.fabMultiplicationSC:
                 createUserInputString("×");
                 break;
             case R.id.fabDivision:
+            case R.id.fabDivisionSC:
                 createUserInputString("÷");
                 break;
             case R.id.fabModulus:
+            case R.id.fabModulusSC:
                 createUserInputString("%");
                 break;
             case R.id.fabDot:
+            case R.id.fabDotSC:
                 createUserInputString(".");
                 break;
             case R.id.fabDeleteLeft:
+            case R.id.fabDeleteLeftSC:
                 createUserInputString("dl");
                 break;
 

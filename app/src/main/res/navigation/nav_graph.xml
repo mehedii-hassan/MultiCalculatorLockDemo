@@ -10,4 +10,9 @@
         android:name="com.example.calculatorlockdemo.ui.fragments.CalculatorFragment"
         android:label="fragment_normal_calculator"
         tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/BMIFragment"
+        android:name="com.example.calculatorlockdemo.ui.fragments.BMIFragment"
+        android:label="fragment_b_m_i"
+        tools:layout="@layout/fragment_b_m_i" />
 </navigation>
