@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#E91E63" />
+            app:tint="#03A9F4" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabNormalToScientificCal"
@@ -74,7 +74,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/glTop"
             app:layout_constraintEnd_toStartOf="@+id/fabCConverter"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#03A9F4" />
+            app:tint="#E91E63" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

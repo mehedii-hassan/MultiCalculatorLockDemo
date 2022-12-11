@@ -37,8 +37,8 @@
             android:text="BMI Calculator"
             android:textAllCaps="true"
             android:textColor="#605C5C"
-            android:textSize="23sp"
-            android:textStyle="bold"
+            android:textSize="@dimen/_25sp"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -64,20 +64,20 @@
 
                 <ImageView
                     android:id="@+id/ivMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_165dp"
+                    android:layout_height="@dimen/_165dp"
                     android:padding="5dp"
                     android:src="@drawable/male"
-                    app:tint="#03A9F4" />
+                    app:tint="#605C5C" />
 
                 <TextView
                     android:id="@+id/tvMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
                     android:padding="5dp"
-                    android:text="Male" />
+                    android:text="Male"
+                    android:textStyle="bold|italic" />
             </LinearLayout>
 
 
@@ -97,14 +97,14 @@
             app:layout_constraintTop_toTopOf="@+id/cvMale">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/ivFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_165dp"
+                    android:layout_height="@dimen/_165dp"
                     android:padding="5dp"
                     android:src="@drawable/female"
                     app:tint="#E91E63" />
@@ -115,7 +115,7 @@
                     android:layout_gravity="center"
                     android:padding="5dp"
                     android:text="Female"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold|italic" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -124,7 +124,7 @@
             android:id="@+id/cvHeight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/_30dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="@+id/cvFemale"
             app:layout_constraintStart_toStartOf="@+id/cvMale"
@@ -142,8 +142,8 @@
                     android:text="Height"
                     android:textAllCaps="false"
                     android:textColor="#E91E63"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/_23sp"
+                    android:textStyle="bold|italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -163,11 +163,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:drawableLeft="@drawable/ic_baseline_circle_24"
-                    android:drawablePadding="3dp"
-                    android:padding="3dp"
+                    android:drawablePadding="@dimen/_5dp"
+                    android:paddingTop="@dimen/_5dp"
                     android:text="Feet:"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/_20sp"
+                    android:textStyle="bold|italic"
                     app:layout_constraintStart_toStartOf="@+id/dividerHeight"
                     app:layout_constraintTop_toBottomOf="@+id/dividerHeight" />
 
@@ -175,12 +175,16 @@
                     android:id="@+id/etFeet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/custom_edit_text_design"
-                    android:hint="input here"
-                    android:maxLength="6"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:background="@drawable/edit_text_feet_and_inch_design"
+                    android:gravity="center"
+                    android:hint="Please give an input"
                     android:inputType="numberDecimal"
-                    android:padding="3dp"
-                    android:textSize="13sp"
+                    android:maxLength="6"
+                    android:paddingTop="@dimen/_5dp"
+                    android:textColor="#605C5C"
+                    android:textSize="@dimen/_17sp"
+                    android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="@+id/tvFeet"
                     app:layout_constraintStart_toEndOf="@+id/tvFeet"
                     app:layout_constraintTop_toTopOf="@+id/tvFeet" />
@@ -189,29 +193,32 @@
                     android:id="@+id/tvInches"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4dp"
                     android:drawableLeft="@drawable/ic_baseline_circle_24"
                     android:drawablePadding="5dp"
-                    android:padding="3dp"
-                    android:text="Inches:"
-                    android:layout_marginTop="20dp"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/etInches"
-                    app:layout_constraintTop_toBottomOf="@+id/dividerHeight" />
+                    android:paddingTop="@dimen/_2dp"
+                    android:text="Inch:"
+                    android:textSize="@dimen/_20sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="@+id/tvFeet"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFeet" />
 
                 <EditText
                     android:id="@+id/etInches"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/custom_edit_text_design"
-                    android:hint="input here"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:background="@drawable/edit_text_feet_and_inch_design"
+                    android:gravity="center"
+                    android:hint="Please give an input"
+                    android:inputType="numberDecimal"
                     android:maxLength="5"
-                    android:inputType="number"
-                    android:padding="3dp"
-                    android:textSize="13sp"
+                    android:paddingTop="@dimen/_5dp"
+                    android:textColor="#605C5C"
+                    android:textSize="@dimen/_17sp"
+                    android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="@+id/tvInches"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvInches"
                     app:layout_constraintTop_toTopOf="@+id/tvInches" />
 
 
@@ -223,7 +230,7 @@
             android:id="@+id/cvWeight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/_20dp"
             app:cardElevation="8dp"
             app:contentPadding="10dp"
             app:layout_constraintEnd_toEndOf="@+id/cvMale"
@@ -241,8 +248,8 @@
                     android:text="Weight"
                     android:textAllCaps="false"
                     android:textColor="#E91E63"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/_23sp"
+                    android:textStyle="bold|italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -258,16 +265,18 @@
                     android:id="@+id/etWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/_20dp"
                     android:background="@drawable/custom_edit_text_design"
                     android:drawableLeft="@drawable/custom_icon_size"
-                    android:drawablePadding="5dp"
+                    android:drawablePadding="@dimen/_10dp"
                     android:drawableTint="#E91E63"
                     android:gravity="start"
                     android:hint="Your weight"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:padding="5dp"
-                    android:textSize="13sp"
+                    android:textColor="#605C5C"
+                    android:textSize="@dimen/_20dp"
+                    android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/dividerId" />
@@ -280,11 +289,11 @@
                     android:src="@drawable/plus"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
-                    app:fabSize="mini"
+                    app:fabSize="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/etWeight"
-                    app:maxImageSize="14dp"
+                    app:maxImageSize="@dimen/_20dp"
                     app:tint="#E91E63" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -295,11 +304,11 @@
                     android:src="@drawable/minus"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
-                    app:fabSize="mini"
+                    app:fabSize="normal"
                     app:layout_constraintEnd_toStartOf="@+id/fabIncrease"
                     app:layout_constraintTop_toTopOf="@+id/fabIncrease"
-                    app:maxImageSize="14dp"
-                    app:tint="#03A9F4" />
+                    app:maxImageSize="@dimen/_20dp"
+                    app:tint="#605C5C" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -326,8 +335,8 @@
                     android:text="Age"
                     android:textAllCaps="false"
                     android:textColor="#E91E63"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/_23sp"
+                    android:textStyle="bold|italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -343,16 +352,17 @@
                     android:id="@+id/etAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/_20dp"
                     android:background="@drawable/custom_edit_text_design"
                     android:drawableLeft="@drawable/custom_age_icon"
-                    android:drawablePadding="5dp"
+                    android:drawablePadding="@dimen/_10dp"
                     android:drawableTint="#E91E63"
-                    android:gravity="start"
                     android:hint="Your age"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:padding="5dp"
-                    android:textSize="13sp"
+                    android:textColor="#605C5C"
+                    android:textSize="@dimen/_20dp"
+                    android:textStyle="italic"
                     app:layout_constraintTop_toBottomOf="@+id/dividerAge" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -364,10 +374,10 @@
                     android:src="@drawable/plus"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
-                    app:fabSize="mini"
+                    app:fabSize="normal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/etAge"
-                    app:maxImageSize="14dp"
+                    app:maxImageSize="@dimen/_20dp"
                     app:tint="#E91E63" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -379,11 +389,11 @@
                     android:src="@drawable/minus"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
-                    app:fabSize="mini"
+                    app:fabSize="normal"
                     app:layout_constraintEnd_toStartOf="@+id/fabIncreaseAge"
                     app:layout_constraintTop_toTopOf="@+id/fabIncreaseAge"
-                    app:maxImageSize="14dp"
-                    app:tint="#2196F3" />
+                    app:maxImageSize="@dimen/_20dp"
+                    app:tint="#605C5C" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -394,7 +404,7 @@
             android:id="@+id/btnBMICalculate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="@dimen/_50dp"
             android:backgroundTint="#E91E63"
             android:text="Show result"
             android:textAllCaps="false"

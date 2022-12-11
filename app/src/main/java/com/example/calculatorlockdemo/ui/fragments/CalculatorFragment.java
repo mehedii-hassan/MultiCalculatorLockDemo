@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.calculatorlockdemo.R;
 import com.example.calculatorlockdemo.databinding.FragmentCalculatorBinding;
@@ -132,6 +133,55 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             case R.id.fabDeleteLeft:
             case R.id.fabDeleteLeftSC:
                 createUserInputString("dl");
+                break;
+            case R.id.fabSin:
+                createUserInputString("sin(");
+                break;
+            case R.id.fabCos:
+                createUserInputString("cos(");
+                break;
+            case R.id.fabINV:
+                //createUserInputString("sin(");
+                //Toast.makeText(context1, "", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.fabAllClear:
+                //createUserInputString("sin(");
+                break;
+            case R.id.fabLog:
+                createUserInputString("log");
+                break;
+            case R.id.fabTan:
+                createUserInputString("tan");
+                break;
+            case R.id.fabCot:
+                createUserInputString("cot");
+                break;
+            case R.id.fabRoot:
+                createUserInputString("√");
+                break;
+            case R.id.fabFactorial:
+                //createUserInputString("fact");
+                break;
+            case R.id.fabLN:
+                createUserInputString("ln");
+                break;
+            case R.id.fabSquare:
+                //createUserInputString("fact");
+                break;
+            case R.id.fabPISc:
+                createUserInputString("3.14");
+                break;
+            case R.id.fabE:
+                createUserInputString("e");
+                break;
+            case R.id.fabOpenParenthesis:
+                createUserInputString("(");
+                break;
+            case R.id.fabCloseParenthesis:
+                createUserInputString(")");
+                break;
+            case R.id.fabByX:
+                //createUserInputString("");
                 break;
 
             default:

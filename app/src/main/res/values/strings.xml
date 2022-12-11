@@ -2,13 +2,39 @@
     <string name="app_name">Calculator</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //BMI category description-----------------------
     <string name="desc_underweight">A BMI of less than 18.5 indicates that you are underweight,so
-     you may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice
-    </string>
+     you may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice.</string>
     <string name="desc_healthy_weight">A BMI indicates that you are at a healthy weight for your
-    height. By maintaining a healthy weight,you lower your risk of developing serious health problems.
-    </string>
-    <string name="desc_overweight">A BMI of over 30 indicates that you are heavily overweight. Your health may be at risk if you do not
+    height. By maintaining a healthy weight,you lower your risk of developing serious health problems.</string>
+    <string name="desc_overweight">A BMI of over 25–29.9 indicates that you are slightly overweight. You may be
+        advised to lose some weight for health reasons. you are recommended to talk to your doctor or a dietitian for advice.</string>
+    <string name="desc_obesity_class_I">A BMI of over 30 indicates that you are heavily overweight. Your health may be at risk if you do not
     lose weight. you are recommended to talk to your doctor or a dietitian for advice.</string>
-    <string name="healthy_weight_range">108-146lb</string>
+
+
+    <string name="healthy_weight_range">18.5 – 25.0</string>
+    <string name="lessThan16">&lt; 16</string>
+    <string name="greaterThan40">&gt; 40</string>
+    <string name="about_bmi">BMI-(Body Mass Index) হচ্ছে দেহের উচ্চতা এবং ওজনের উপর ভিত্তি করে প্রাপ্ত একটি সূচক। এটি দ্বারা দেহের ওজন স্বাভাবিকের চেয়ে কম না বেশি নির্ণয় করা যায়।
+        \n\nBMI is an index based on body height and weight.By this, the body weight can be determined more or less than normal.
+    </string>
+
+
+    <string name="reduceWeightTxt">To achieve healthy weight you have to reduce:</string>
+    <string name="needWeightTxt">To achieve your healthy weight you need:</string>
+    <string name="alreadyHealthyWeightTxt">Your weight is already healthy:</string>
+
+    //Bmi condition
+    <string name="verySeverelyUnderWeight">Very severely under weight</string>
+    <string name="severelyUnderWeight">Severely under weight</string>
+    <string name="underWeight">Underweight</string>
+    <string name="healthyWeight">Healthy weight</string>
+    <string name="overWeight">Overweight</string>
+    <string name="obeseClassOne">Obese class I</string>
+    <string name="obeseClassTwo">Obese class II</string>
+    <string name="obeseClassThree">Obese class II</string>
+
+
 </resources>

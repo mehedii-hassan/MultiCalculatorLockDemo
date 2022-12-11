@@ -1,8 +1,10 @@
 package com.example.calculatorlockdemo.ui.fragments;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -32,6 +34,9 @@ public class BMIFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        //set status bar color -------------------------------------------------------------
+        //requireActivity().getWindow().setStatusBarColor(Color.parseColor("#E91E63"));
         binding = FragmentBMIBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -44,7 +49,7 @@ public class BMIFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //container.removeView(view);
+                getActivity().getFragmentManager().popBackStack();
             }
         });
 
@@ -66,7 +71,7 @@ public class BMIFragment extends Fragment {
                 binding.cvFemale.setCardBackgroundColor(Color.parseColor("#E91E63"));
                 binding.cvMale.setCardBackgroundColor(Color.parseColor("#FFFFFFFF"));
                 binding.ivFemale.setColorFilter(Color.parseColor("#FFFFFFFF"));
-                binding.ivMale.setColorFilter(Color.parseColor("#03A9F4"));
+                binding.ivMale.setColorFilter(Color.parseColor("#605C5C"));
                 isFemaleSelect = true;
                 isMaleSelect = false;
             }
@@ -89,11 +94,7 @@ public class BMIFragment extends Fragment {
             String weightString = binding.etWeight.getText().toString();
             if (!weightString.isEmpty()) {
                 int weight = Integer.parseInt(weightString);
-                if (weight >= 5) {
-
-                    temp = weight - 5;
-                    binding.etWeight.setText(String.valueOf(temp));
-                } else if (weight > 0) {
+                if (weight > 0) {
                     temp = weight - 1;
                     binding.etWeight.setText(String.valueOf(temp));
                 }
@@ -118,11 +119,7 @@ public class BMIFragment extends Fragment {
             String ageString = binding.etAge.getText().toString();
             if (!ageString.isEmpty()) {
                 int age = Integer.parseInt(ageString);
-                if (age >= 5) {
-
-                    temp = age - 5;
-                    binding.etAge.setText(String.valueOf(temp));
-                } else if (age > 0) {
+                if (age > 0) {
                     temp = age - 1;
                     binding.etAge.setText(String.valueOf(temp));
                 }

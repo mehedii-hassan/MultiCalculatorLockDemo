@@ -460,7 +460,7 @@
                         android:layout_height="match_parent"
                         android:clickable="true"
                         android:focusable="true"
-                        android:foreground="@drawable/card_view_click_effect"
+                        android:foreground="@drawable/equal_sign_click_efect"
                         android:gravity="center"
                         app:cardBackgroundColor="#FF9800"
                         app:cardCornerRadius="16dp">

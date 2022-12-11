@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="6dp"
+        app:contentPadding="@dimen/_30dp"
+        tools:context=".ui.dialogfragments.BMICategoryDialogFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvClassification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="BMI Classificaton"
+                android:textAllCaps="true"
+                android:textColor="#E91E63"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerClassification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvClassification" />
+
+
+            <TextView
+                android:id="@+id/tvOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_16dp"
+                android:drawableLeft="@drawable/circle_two"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Very Severely Underweight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerClassification" />
+
+            <TextView
+                android:id="@+id/tvOneValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/lessThan16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvOne" />
+
+            <TextView
+                android:id="@+id/tvTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/circle_one"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Severely Underweight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOne" />
+
+            <TextView
+                android:id="@+id/tvTwoValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="16.0 - 17.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTwo" />
+
+            <TextView
+                android:id="@+id/tvThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/circle_three"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Underweight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTwo" />
+
+            <TextView
+                android:id="@+id/tvThreeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="17.0 - 18.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvThree" />
+
+            <TextView
+                android:id="@+id/tvFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/circle_five"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Healthy weight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvThree" />
+
+            <TextView
+                android:id="@+id/tvFourValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="18.5 - 25.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvFour" />
+
+            <TextView
+                android:id="@+id/tvFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/circle_four"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Overweight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFour" />
+
+            <TextView
+                android:id="@+id/tvFiveValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="25.0 - 30.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvFive" />
+
+            <TextView
+                android:id="@+id/tvSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/circle_six"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Obesity Class I"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFive" />
+
+            <TextView
+                android:id="@+id/tvSixValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="30.0 - 35.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvSix" />
+
+            <TextView
+                android:id="@+id/tvSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/circle_eight"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Obesity Class II"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSix" />
+
+            <TextView
+                android:id="@+id/tvSevenValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="35.0 - 40.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvSeven" />
+
+            <TextView
+                android:id="@+id/tvEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableLeft="@drawable/ic_baseline_circle_24"
+                android:drawablePadding="@dimen/_3dp"
+                android:text="Obesity Class III"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSeven" />
+
+            <TextView
+                android:id="@+id/tvEightValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/greaterThan40"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvEight" />
+
+            <Button
+                android:id="@+id/btnCloseClassification"
+                android:layout_width="@dimen/_200dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_marginHorizontal="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:backgroundTint="#E91E63"
+                android:padding="@dimen/_5dp"
+                android:text="Close"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEight" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
