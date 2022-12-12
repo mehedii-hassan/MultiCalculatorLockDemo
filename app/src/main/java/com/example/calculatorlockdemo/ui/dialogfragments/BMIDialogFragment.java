@@ -130,16 +130,23 @@ public class BMIDialogFragment extends DialogFragment {
         fsReduceWeightForHealthyWeightValue = df.format(reduceWeightForHealthyWeight) + " kg";
 
         if (bmi < 18.5) {
+            Log.e("TAG", "underweight bmi score " + bmi);
             bind(R.string.underWeight, R.string.desc_underweight, R.string.needWeightTxt, fsNeedWeightforHealthyWeightValue);
         } else if (bmi < 25) {
+            Log.e("TAG", "healthy bmi score " + bmi);
             bind(R.string.healthyWeight, R.string.desc_healthy_weight, R.string.alreadyHealthyWeightTxt, "Alright");
         } else if (bmi < 30) {
+            Log.e("TAG", "overweight bmi score " + bmi);
             bind(R.string.overWeight, R.string.desc_overweight, R.string.reduceWeightTxt, fsReduceWeightForHealthyWeightValue);
         } else if (bmi < 35) {
+            Log.e("TAG", "obese one bmi score " + bmi);
+
             bind(R.string.obeseClassOne, R.string.desc_obesity_class_I, R.string.reduceWeightTxt, fsReduceWeightForHealthyWeightValue);
         } else if (bmi < 40) {
+            Log.e("TAG", "obese two bmi score " + bmi);
             bind(R.string.obeseClassTwo, R.string.desc_obesity_class_I, R.string.reduceWeightTxt, fsReduceWeightForHealthyWeightValue);
         } else if (bmi >= 40) {
+            Log.e("TAG", "obese three bmi score " + bmi);
             bind(R.string.obeseClassThree, R.string.desc_obesity_class_I, R.string.reduceWeightTxt, fsReduceWeightForHealthyWeightValue);
         } else {
             Log.e("TAG", "BMI = " + bmi);
@@ -153,6 +160,5 @@ public class BMIDialogFragment extends DialogFragment {
         binding.tvHWForYourHeightValue.setText(fsYourHealthyWeightRange);
         binding.tvAchieveOrReduceWeightTxt.setText(needOrReduceWeightTxt);
         binding.tvAchieveOrReduceValue.setText(achieveOrReduceWeightTXT);
-        Log.e("TAG", "gender = ");
     }
 }

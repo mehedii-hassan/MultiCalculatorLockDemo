@@ -55,8 +55,15 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         binding.fabBMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Navigation.findNavController(v).navigate(R.id.BMIFragment);
+                Toast.makeText(context1, "BMI Calculator", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        binding.fabCConverter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context1, "Currency Converter", Toast.LENGTH_SHORT).show();
             }
         });
     }

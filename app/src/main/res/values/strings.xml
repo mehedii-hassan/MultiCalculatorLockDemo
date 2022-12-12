@@ -24,7 +24,7 @@
 
     <string name="reduceWeightTxt">To achieve healthy weight you have to reduce:</string>
     <string name="needWeightTxt">To achieve your healthy weight you need:</string>
-    <string name="alreadyHealthyWeightTxt">Your weight is already healthy:</string>
+    <string name="alreadyHealthyWeightTxt">Your weight is already healthy: </string>
 
     //Bmi condition
     <string name="verySeverelyUnderWeight">Very severely under weight</string>

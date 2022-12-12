@@ -95,7 +95,7 @@ public class BMIFragment extends Fragment {
             if (!weightString.isEmpty()) {
                 int weight = Integer.parseInt(weightString);
                 if (weight > 0) {
-                    temp = weight - 1;
+                    temp = weight - 2;
                     binding.etWeight.setText(String.valueOf(temp));
                 }
             } else {
@@ -120,7 +120,7 @@ public class BMIFragment extends Fragment {
             if (!ageString.isEmpty()) {
                 int age = Integer.parseInt(ageString);
                 if (age > 0) {
-                    temp = age - 1;
+                    temp = age - 2;
                     binding.etAge.setText(String.valueOf(temp));
                 }
             } else {
@@ -142,7 +142,7 @@ public class BMIFragment extends Fragment {
                 Log.e("TAG", "weight " + weight);
 
                 if ((isFemaleSelect && isMaleSelect)) {
-                    Toast.makeText(v.getContext(), "Please select your gender first", Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext(), "Please select your Gender first", Toast.LENGTH_LONG).show();
                     return;
                 }
 
