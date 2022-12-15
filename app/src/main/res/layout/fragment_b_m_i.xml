@@ -275,7 +275,7 @@
                     android:inputType="numberDecimal"
                     android:padding="5dp"
                     android:textColor="#605C5C"
-                    android:textSize="@dimen/_20dp"
+                    android:textSize="@dimen/_17dp"
                     android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -361,7 +361,7 @@
                     android:inputType="numberDecimal"
                     android:padding="5dp"
                     android:textColor="#605C5C"
-                    android:textSize="@dimen/_20dp"
+                    android:textSize="@dimen/_17dp"
                     android:textStyle="italic"
                     app:layout_constraintTop_toBottomOf="@+id/dividerAge" />
 

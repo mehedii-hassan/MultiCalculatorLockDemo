@@ -8,6 +8,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 import com.example.calculatorlockdemo.R;
 import com.example.calculatorlockdemo.databinding.FragmentBMIBinding;
 import com.example.calculatorlockdemo.ui.dialogfragments.BMIDialogFragment;
+
+import java.util.Objects;
 
 
 public class BMIFragment extends Fragment {
@@ -48,8 +51,8 @@ public class BMIFragment extends Fragment {
         binding.fabArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getActivity().getFragmentManager().popBackStack();
+                Navigation.findNavController(v).navigate(R.id.actionCalculatorFragment);
+                Toast.makeText(v.getContext(), "Normal Calculator", Toast.LENGTH_SHORT).show();
             }
         });
 

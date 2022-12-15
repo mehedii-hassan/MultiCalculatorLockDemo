@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.fragments.CurrencyConverterFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7dp"
+            android:padding="@dimen/_2dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabArrowBackCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCCTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvCCTitle"
+                app:maxImageSize="30dp"
+                app:tint="#E91E63" />
+
+            <TextView
+                android:id="@+id/tvCCTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Currency Converter"
+                android:textAllCaps="true"
+                android:textColor="#605C5C"
+                android:textSize="@dimen/_20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/fabArrowBackCC"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabThreeDotMenuCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fabArrowBackCC"
+                app:tint="#FF9800" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#FFFCFC"
+            android:padding="@dimen/_15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/glMiddleCC"
+            app:layout_constraintTop_toBottomOf="@+id/containerTop">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ivFlag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                app:cardCornerRadius="@dimen/_4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_35dp"
+                    android:layout_height="@dimen/_35dp"
+                    android:src="@drawable/bangladesh" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvCountryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15dp"
+                android:background="@drawable/custom_outline_border"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:drawablePadding="@dimen/_5dp"
+                android:padding="@dimen/_5dp"
+                android:text="BDT"
+                android:clickable="true"
+                android:focusable="true"
+                android:textSize="@dimen/_17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFlag"
+                app:layout_constraintStart_toEndOf="@+id/ivFlag"
+                app:layout_constraintTop_toTopOf="@id/ivFlag" />
+
+            <EditText
+                android:id="@+id/etOne"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:background="@drawable/custom_edit_text_design"
+                android:gravity="end"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textSize="@dimen/_17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFlag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCountryName"
+                app:layout_constraintTop_toTopOf="@+id/ivFlag" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2dp"
+                android:text="Bangladeshi Taka-Tk"
+                android:textSize="@dimen/_10sp"
+                app:layout_constraintEnd_toEndOf="@+id/etOne"
+                app:layout_constraintTop_toBottomOf="@+id/etOne" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ivFlagOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30dp"
+                app:cardCornerRadius="@dimen/_4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFlag">
+
+                <ImageView
+                    android:layout_width="@dimen/_35dp"
+                    android:layout_height="@dimen/_35dp"
+                    android:background="@drawable/flag_custom_design"
+                    android:clipToOutline="true"
+                    android:src="@drawable/usa" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvCountryNameOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_outline_border"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:drawablePadding="@dimen/_5dp"
+                android:padding="@dimen/_5dp"
+                android:text="USD"
+                android:textSize="@dimen/_17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFlagOne"
+                app:layout_constraintStart_toStartOf="@+id/tvCountryName"
+                app:layout_constraintTop_toTopOf="@id/ivFlagOne" />
+
+            <EditText
+                android:id="@+id/etTwo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:background="@drawable/custom_edit_text_design"
+                android:gravity="end"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textSize="@dimen/_17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFlagOne"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCountryNameOne"
+                app:layout_constraintTop_toTopOf="@+id/ivFlagOne" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2dp"
+                android:text="United States Doler-$"
+                android:textSize="@dimen/_10sp"
+                app:layout_constraintEnd_toEndOf="@+id/etTwo"
+                app:layout_constraintTop_toBottomOf="@+id/etTwo" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ivFlagTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30dp"
+                app:cardCornerRadius="@dimen/_4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFlagOne">
+
+                <ImageView
+                    android:layout_width="@dimen/_35dp"
+                    android:layout_height="@dimen/_35dp"
+                    android:background="@drawable/flag_custom_design"
+                    android:src="@drawable/germany" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvCountryNameTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_outline_border"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:drawablePadding="@dimen/_5dp"
+                android:padding="@dimen/_5dp"
+                android:text="EUR"
+                android:textSize="@dimen/_17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFlagTwo"
+                app:layout_constraintStart_toStartOf="@+id/tvCountryNameOne"
+                app:layout_constraintTop_toTopOf="@id/ivFlagTwo" />
+
+            <EditText
+                android:id="@+id/etThree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:background="@drawable/custom_edit_text_design"
+                android:gravity="end"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textSize="@dimen/_17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFlagTwo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCountryNameTwo"
+                app:layout_constraintTop_toTopOf="@+id/ivFlagTwo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2dp"
+                android:text="Euro-€"
+                android:textSize="@dimen/_10sp"
+                app:layout_constraintEnd_toEndOf="@+id/etThree"
+                app:layout_constraintTop_toBottomOf="@+id/etThree" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2dp"
+                android:text="Last updated: 10.10.2022 10:20pm"
+                android:textColor="#8A6A6868"
+                android:textSize="@dimen/_10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFlagTwo"
+                app:layout_constraintVertical_bias=".8" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/dividerCC"
+            android:layout_width="@dimen/_50dp"
+            android:layout_height="@dimen/_3dp"
+            app:dividerColor="#A39A8D"
+            app:layout_constraintBottom_toTopOf="@+id/glMiddleCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMiddleCC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".55" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/glMiddleCC">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSevenCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="seven"
+                android:src="@drawable/seven"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toTopOf="@+id/fabFourCC"
+                app:layout_constraintEnd_toStartOf="@+id/fabEightCC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEightCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="eight"
+                android:src="@drawable/eight"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabNineCC"
+                app:layout_constraintStart_toEndOf="@+id/fabSevenCC"
+                app:layout_constraintTop_toTopOf="@+id/fabSevenCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabNineCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="nine"
+                android:src="@drawable/nine"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabAllClearCC"
+                app:layout_constraintStart_toEndOf="@+id/fabEightCC"
+                app:layout_constraintTop_toTopOf="@+id/fabEightCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAllClearCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#E91E63"
+                android:contentDescription="nine"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/fabSixCC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fabNineCC"
+                app:layout_constraintTop_toTopOf="@+id/fabNineCC"
+                app:maxImageSize="23dp"
+                app:tint="@color/white" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabFourCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="four"
+                android:src="@drawable/four"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toTopOf="@+id/fabOneCC"
+                app:layout_constraintEnd_toStartOf="@+id/fabFiveCC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabSevenCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabFiveCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="eight"
+                android:src="@drawable/five"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabSixCC"
+                app:layout_constraintStart_toEndOf="@+id/fabFourCC"
+                app:layout_constraintTop_toTopOf="@+id/fabFourCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSixCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="nine"
+                android:src="@drawable/six"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabAllClearCC"
+                app:layout_constraintStart_toEndOf="@+id/fabFiveCC"
+                app:layout_constraintTop_toTopOf="@+id/fabFiveCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabOneCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="one"
+                android:src="@drawable/one"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toTopOf="@+id/fabDoubleZeroCC"
+                app:layout_constraintEnd_toStartOf="@+id/fabTwoCC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabFourCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabTwoCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="Two"
+                android:src="@drawable/two"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabThreeCC"
+                app:layout_constraintStart_toEndOf="@+id/fabOneCC"
+                app:layout_constraintTop_toTopOf="@+id/fabOneCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabThreeCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="three"
+                android:src="@drawable/three"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabAllClearCC"
+                app:layout_constraintStart_toEndOf="@+id/fabTwoCC"
+                app:layout_constraintTop_toTopOf="@+id/fabTwoCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabDoubleZeroCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="double zero"
+                android:src="@drawable/double_0"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fabDotCC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabOneCC"
+                app:maxImageSize="34dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabDotCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="dot"
+                android:src="@drawable/dot"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabZeroCC"
+                app:layout_constraintStart_toEndOf="@+id/fabDoubleZeroCC"
+                app:layout_constraintTop_toTopOf="@+id/fabDoubleZeroCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabZeroCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="zero"
+                android:src="@drawable/zero"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/fabAllClearCC"
+                app:layout_constraintStart_toEndOf="@+id/fabDotCC"
+                app:layout_constraintTop_toTopOf="@+id/fabDotCC"
+                app:maxImageSize="23dp"
+                app:tint="#605C5C" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabDeleteLeftCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#E91E63"
+                android:contentDescription="delete left"
+                android:src="@drawable/delete"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/fabZeroCC"
+                app:layout_constraintEnd_toEndOf="@+id/fabAllClearCC"
+                app:layout_constraintStart_toStartOf="@+id/fabAllClearCC"
+                app:layout_constraintTop_toTopOf="@+id/fabThreeCC"
+                app:maxImageSize="23dp"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
