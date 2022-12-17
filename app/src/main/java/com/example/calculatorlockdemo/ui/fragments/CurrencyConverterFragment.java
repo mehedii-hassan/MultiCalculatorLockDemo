@@ -27,6 +27,8 @@ public class CurrencyConverterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentCurrencyConverterBinding.inflate(inflater,container,false);
+        //disable default keyboard when clicked edittext -----------------------
+        binding.etOne.setShowSoftInputOnFocus(false);
         binding.fabAllClearCC.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#ffffff")));
         return binding.getRoot();
 

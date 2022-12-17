@@ -319,6 +319,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:gravity="center">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -366,6 +367,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:gravity="center">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -413,6 +415,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:gravity="center">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -440,20 +443,6 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp">
 
-                    <!--<LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/equal_bg"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center">
-
-                        <ImageView
-                            app:tint="#605C5C"
-                            android:layout_width="19dp"
-                            android:layout_height="15dp"
-                            android:src="@drawable/equal_sign" />
-                    </LinearLayout>-->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/ivEqual"
                         android:layout_width="match_parent"

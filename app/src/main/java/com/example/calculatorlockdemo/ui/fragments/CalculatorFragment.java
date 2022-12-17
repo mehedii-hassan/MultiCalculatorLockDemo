@@ -28,6 +28,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     private FragmentCalculatorBinding binding;
     private boolean showNormalCalculator = true;
     private String userInputString = "";
+    private String outputString = "";
     private Context context;
     android.content.Context context1;
 
@@ -39,33 +40,17 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentCalculatorBinding.inflate(inflater, container, false);
         context1 = getContext();
+        //Disable edittext default keyboard programmatically---------------
+        binding.etUserInput.setShowSoftInputOnFocus(false);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        //super.onViewCreated(view, savedInstanceState);
-
         //Set onclick listener for view ----------------------------------
         setOnClickListener(binding, this);
-
-        binding.fabBMI.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.BMIFragment);
-                Toast.makeText(context1, "BMI Calculator", Toast.LENGTH_SHORT).show();
-            }
-        });
-        binding.fabCConverter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.currencyConverterFragment);
-                Toast.makeText(context1, "Currency Converter", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -73,6 +58,17 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
 
         switch (view.getId()) {
+            case R.id.fabCurrencyConverter:
+                Navigation.findNavController(view).navigate(R.id.currencyConverterFragment);
+                Toast.makeText(context1, "Currency Converter", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.fabBMI:
+                Navigation.findNavController(view).navigate(R.id.BMIFragment);
+                Toast.makeText(context1, "BMI Calculator", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.fabSwitchNormalToScientificCal:
+                switchNormalToScientificCal();
+                break;
             case R.id.fabZero:
             case R.id.fabZeroSC:
                 createUserInputString("0");
@@ -151,9 +147,6 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
                 //createUserInputString("sin(");
                 //Toast.makeText(context1, "", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.fabAllClear:
-                //createUserInputString("sin(");
-                break;
             case R.id.fabLog:
                 createUserInputString("log");
                 break;
@@ -190,20 +183,20 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             case R.id.fabByX:
                 //createUserInputString("");
                 break;
-
+            case R.id.ivEqual:
+            case R.id.ivEqualSC:
+                equalClicked();
+                break;
+            case R.id.fabAllClear:
+            case R.id.fabAllClearSC:
+                allClear();
+                break;
             default:
                 Log.e("TAG", "Error");
                 break;
         }
-
-
-        if (view.getId() == R.id.fabAllClear) {
-            binding.tvInputString.setText("");
-            binding.tvOutput.setText("");
-            userInputString = "";
-        }
-
     }
+
 
     //Create user input string for calculation----------------------------
     private void createUserInputString(String userInput) {
@@ -211,17 +204,17 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         //Press delete left button then delete one by one from left to right til string length
         if (userInput.equals("dl") && userInputString.length() > 0) {
             userInputString = userInputString.substring(0, userInputString.length() - 1);
-            binding.tvInputString.setText(userInputString);
+            binding.etUserInput.setText(userInputString);
         }
 
         if (isNumeric(userInput)) {
             userInputString = userInputString + userInput;
-            binding.tvInputString.setText(userInputString);
+            binding.etUserInput.setText(userInputString);
         } else {
 
             if (userInput.equals(".") && userInputString.length() == 0) {
                 userInputString = userInputString + "0.";
-                binding.tvInputString.setText(userInputString);
+                binding.etUserInput.setText(userInputString);
             }
             //Check user input length 0 or not --------------------------------------------
             //if it's 0 then click operator but it won't work------------------------------
@@ -235,31 +228,22 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
                         Log.e("TAG", "nothing to do");
                     } else {
                         userInputString = userInputString + userInput;
-                        binding.tvInputString.setText(userInputString);
+                        binding.etUserInput.setText(userInputString);
                     }
-                } else if (userInput.equals("+") || userInput.equals("-") || userInput.equals("×") || userInput.equals("÷") || userInput.equals(".")) {
+                } else if (userInput.equals("+") || userInput.equals("-") || userInput.equals("×") || userInput.equals("÷") || userInput.equals(".")||userInput.equals("%")) {
                     if (!inputStringLastCharOperator) {
                         userInputString = userInputString + userInput;
-                        binding.tvInputString.setText(userInputString);
+                        binding.etUserInput.setText(userInputString);
                     }
                 }
             }
         }
 
         String finalString = userInputString.replaceAll("×", "*").replaceAll("÷", "/");
-        String result = getResult(finalString);
-        if (!result.equals("Err")) {
-            binding.tvOutput.setText(result);
+        outputString = getResult(finalString);
+        if (!outputString.equals("Err")) {
+            binding.tvOutput.setText(outputString);
         }
-        binding.includeNormalCalculator.ivEqual.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!result.equals("Err")) {
-                    binding.tvInputString.setText(result);
-                    binding.tvOutput.setText("");
-                }
-            }
-        });
     }
 
     private boolean checkPointOrNot(char c) {
@@ -289,6 +273,41 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         }
     }
 
+    private void switchNormalToScientificCal() {
+        if (showNormalCalculator) {
+            binding.includeScientificCalculator.containerScientificCal.setVisibility(View.VISIBLE);
+            binding.includeNormalCalculator.containerNormalCal.setVisibility(View.INVISIBLE);
+            showNormalCalculator = false;
+            binding.etUserInput.setText("");
+            binding.tvOutput.setText("");
+            outputString = "";
+            binding.fabSwitchNormalToScientificCal.setImageResource(R.drawable.normal_cal_icon);
+        } else {
+            binding.includeScientificCalculator.containerScientificCal.setVisibility(View.INVISIBLE);
+            binding.includeNormalCalculator.containerNormalCal.setVisibility(View.VISIBLE);
+            binding.fabSwitchNormalToScientificCal.setImageResource(R.drawable.scientific_cal_icon);
+            showNormalCalculator = true;
+            binding.etUserInput.setText("");
+            binding.tvOutput.setText("");
+            outputString = "";
+
+        }
+
+    }
+
+    private void allClear() {
+        binding.etUserInput.setText("");
+        binding.tvOutput.setText("");
+        userInputString = "";
+    }
+
+    private void equalClicked() {
+        if (!outputString.equals("Err")) {
+            binding.etUserInput.setText(outputString);
+            binding.tvOutput.setText("");
+            userInputString = outputString;
+        }
+    }
 
     //Check given input number or not----------------------------------------
     //if it's a number then return true otherwise false----------------------
@@ -301,7 +320,9 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         }
     }
 
+
     private void setOnClickListener(FragmentCalculatorBinding binding, View.OnClickListener onClickListener) {
+        //set text as image Bitmap-----------------------------------
         binding.includeNormalCalculator.fabAllClear.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#605C5C")));
         binding.includeScientificCalculator.fabAllClearSC.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#605C5C")));
         binding.includeScientificCalculator.fabLog.setImageBitmap(Constants.textAsBitmap("log", 40, Color.parseColor("#605C5C")));
@@ -317,28 +338,10 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         binding.includeScientificCalculator.fabOpenParenthesis.setImageBitmap(Constants.textAsBitmap("(", 40, Color.parseColor("#605C5C")));
         binding.includeScientificCalculator.fabCloseParenthesis.setImageBitmap(Constants.textAsBitmap(")", 40, Color.parseColor("#605C5C")));
         binding.includeScientificCalculator.fabE.setImageBitmap(Constants.textAsBitmap("e", 40, Color.parseColor("#605C5C")));
-        //Change calculator mode from normal to scientific or scientific to normal--------------------------
-        binding.fabNormalToScientificCal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (showNormalCalculator) {
-                    binding.includeScientificCalculator.containerScientificCal.setVisibility(View.VISIBLE);
-                    binding.includeNormalCalculator.containerNormalCal.setVisibility(View.INVISIBLE);
-                    showNormalCalculator = false;
-                    binding.tvInputString.setText("");
-                    binding.tvOutput.setText("");
-                    binding.fabNormalToScientificCal.setImageResource(R.drawable.normal_cal_icon);
-                } else {
-                    binding.includeScientificCalculator.containerScientificCal.setVisibility(View.INVISIBLE);
-                    binding.includeNormalCalculator.containerNormalCal.setVisibility(View.VISIBLE);
-                    binding.fabNormalToScientificCal.setImageResource(R.drawable.scientific_cal_icon);
-                    showNormalCalculator = true;
-                    binding.tvInputString.setText("");
-                    binding.tvOutput.setText("");
 
-                }
-            }
-        });
+        binding.fabSwitchNormalToScientificCal.setOnClickListener(this);
+        binding.fabBMI.setOnClickListener(this);
+        binding.fabCurrencyConverter.setOnClickListener(this);
         //set on click listener in normal calculator----------------------------------
         binding.includeNormalCalculator.fabOne.setOnClickListener(this);
         binding.includeNormalCalculator.fabTwo.setOnClickListener(this);
@@ -394,6 +397,6 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         binding.includeScientificCalculator.fabMultiplicationSC.setOnClickListener(this);
         binding.includeScientificCalculator.fabSubtractionSC.setOnClickListener(this);
         binding.includeScientificCalculator.fabAdditionSC.setOnClickListener(this);
-        binding.includeScientificCalculator.fabEqualSC.setOnClickListener(this);
+        binding.includeScientificCalculator.ivEqualSC.setOnClickListener(this);
     }
 }
