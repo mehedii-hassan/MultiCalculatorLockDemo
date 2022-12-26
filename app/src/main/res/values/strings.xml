@@ -5,13 +5,13 @@
 
     //BMI category description-----------------------
     <string name="desc_underweight">A BMI of less than 18.5 indicates that you are underweight,so
-     you may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice.</string>
+                you may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice.</string>
     <string name="desc_healthy_weight">A BMI indicates that you are at a healthy weight for your
-    height. By maintaining a healthy weight,you lower your risk of developing serious health problems.</string>
+                height. By maintaining a healthy weight,you lower your risk of developing serious health problems.</string>
     <string name="desc_overweight">A BMI of over 25–29.9 indicates that you are slightly overweight. You may be
-        advised to lose some weight for health reasons. you are recommended to talk to your doctor or a dietitian for advice.</string>
+                advised to lose some weight for health reasons. you are recommended to talk to your doctor or a dietitian for advice.</string>
     <string name="desc_obesity_class_I">A BMI of over 30 indicates that you are heavily overweight. Your health may be at risk if you do not
-    lose weight. you are recommended to talk to your doctor or a dietitian for advice.</string>
+                lose weight. you are recommended to talk to your doctor or a dietitian for advice.</string>
 
 
     <string name="healthy_weight_range">18.5 – 25.0</string>
@@ -35,6 +35,43 @@
     <string name="obeseClassOne">Obese class I</string>
     <string name="obeseClassTwo">Obese class II</string>
     <string name="obeseClassThree">Obese class II</string>
+    <string name="doubleZero">00</string>
 
+    //create an string array for currency name
+    <string-array name="CurrencyNames">
+        <item>Argentine Peso</item>
+        <item>Armenia Dram</item>
+        <item>Australian Dollar</item>
+        <item>Azerbaijan New Manat</item>
+        <item>Bangladeshi Taka</item>
+        <item>Brazilian Real</item>
+        <item>Belgium Franc</item>
+        <item>CFA Franc BEAC</item>
+        <item>Canadian Dollar</item>
+        <item>Chinese Yuan</item>
+        <item>Costa Rica Colon</item>
+        <item>Colombian Peso</item>
+        <item>Denmark Krone</item>
+        <item>Euro</item>
+    </string-array>
+
+    //create an string array for currency name
+    <string-array name="CurrencyCodes">
+        <item>ARS</item>
+        <item>AMD</item>
+        <item>AZN</item>
+        <item>AUD</item>
+        <item>BDT</item>
+        <item>BRL</item>
+        <item>BEF (EURO)</item>
+        <item>XAF</item>
+        <item>CAD</item>
+        <item>CNY</item>
+        <item>CRC</item>
+        <item>COP</item>
+        <item>DKK</item>
+        <item>EUR</item>
+
+    </string-array>
 
 </resources>

@@ -29,6 +29,8 @@
             app:layout_constraintGuide_percent=".5" />
 
 
+
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabCurrencyConverter"
             android:layout_width="wrap_content"
@@ -83,18 +85,27 @@
             android:background="#DCFBFAFA"
             app:layout_constraintBottom_toTopOf="@id/glMiddle"
             app:layout_constraintTop_toBottomOf="@+id/glTop">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".001" />
 
             <EditText
                 android:id="@+id/etUserInput"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/custom_edittext_with_no_outline_border"
                 android:gravity="end"
                 android:padding="2dp"
+                android:textCursorDrawable="@drawable/custom_cursor_color"
                 android:textSize="50sp"
-                app:layout_constraintBottom_toTopOf="@+id/tvOutput" />
+                app:layout_constraintBottom_toTopOf="@+id/tvOutput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/glStart" />
 
             <TextView
                 android:id="@+id/tvOutput"

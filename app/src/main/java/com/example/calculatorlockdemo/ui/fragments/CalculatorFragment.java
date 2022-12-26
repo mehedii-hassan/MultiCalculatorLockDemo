@@ -50,7 +50,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         //Set onclick listener for view ----------------------------------
-        setOnClickListener(binding, this);
+        setOnClickListener();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -230,7 +230,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
                         userInputString = userInputString + userInput;
                         binding.etUserInput.setText(userInputString);
                     }
-                } else if (userInput.equals("+") || userInput.equals("-") || userInput.equals("×") || userInput.equals("÷") || userInput.equals(".")||userInput.equals("%")) {
+                } else if (userInput.equals("+") || userInput.equals("-") || userInput.equals("×") || userInput.equals("÷") || userInput.equals(".") || userInput.equals("%")) {
                     if (!inputStringLastCharOperator) {
                         userInputString = userInputString + userInput;
                         binding.etUserInput.setText(userInputString);
@@ -321,7 +321,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     }
 
 
-    private void setOnClickListener(FragmentCalculatorBinding binding, View.OnClickListener onClickListener) {
+    private void setOnClickListener() {
         //set text as image Bitmap-----------------------------------
         binding.includeNormalCalculator.fabAllClear.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#605C5C")));
         binding.includeScientificCalculator.fabAllClearSC.setImageBitmap(Constants.textAsBitmap("AC", 40, Color.parseColor("#605C5C")));

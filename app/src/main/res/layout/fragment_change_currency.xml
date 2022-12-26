@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.ChangeCurrencyFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerChangeCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabArrowBackChangeCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvChangeCName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvChangeCName"
+                app:maxImageSize="30dp"
+                app:tint="#E91E63" />
+
+            <TextView
+                android:id="@+id/tvChangeCName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Change Currency"
+                android:textAllCaps="false"
+                android:textColor="#605C5C"
+                android:textSize="@dimen/_20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/fabArrowBackChangeCurrency"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:id="@+id/rvCurrencyNames"
+            app:layout_constraintTop_toBottomOf="@+id/containerChangeCurrency" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

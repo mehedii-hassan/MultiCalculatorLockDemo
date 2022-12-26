@@ -76,7 +76,7 @@
             app:layout_constraintTop_toBottomOf="@+id/containerTop">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ivFlag"
+                android:id="@+id/cvFlag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10dp"
@@ -85,31 +85,32 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/ivFlag"
                     android:layout_width="@dimen/_35dp"
-                    android:layout_height="@dimen/_35dp"
-                    android:src="@drawable/bangladesh" />
+                    android:layout_height="@dimen/_35dp" />
             </androidx.cardview.widget.CardView>
 
 
             <TextView
-                android:id="@+id/tvCountryName"
+                android:id="@+id/tvCurrencyCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15dp"
                 android:background="@drawable/custom_outline_border"
+                android:clickable="true"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                 android:drawablePadding="@dimen/_5dp"
+                android:focusable="true"
                 android:padding="@dimen/_5dp"
                 android:text="BDT"
-                android:clickable="true"
-                android:focusable="true"
+                android:textColor="#808080"
                 android:textSize="@dimen/_17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivFlag"
-                app:layout_constraintStart_toEndOf="@+id/ivFlag"
-                app:layout_constraintTop_toTopOf="@id/ivFlag" />
+                app:layout_constraintBottom_toBottomOf="@+id/cvFlag"
+                app:layout_constraintStart_toEndOf="@+id/cvFlag"
+                app:layout_constraintTop_toTopOf="@id/cvFlag" />
 
             <EditText
-                android:id="@+id/etOne"
+                android:id="@+id/etUserCurrencyAmount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10dp"
@@ -117,56 +118,57 @@
                 android:gravity="end"
                 android:hint="0"
                 android:inputType="numberDecimal"
-                android:maxLength="12"
-                android:textSize="@dimen/_17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivFlag"
+                android:textSize="@dimen/_30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvFlag"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvCountryName"
-                app:layout_constraintTop_toTopOf="@+id/ivFlag" />
+                app:layout_constraintStart_toEndOf="@+id/tvCurrencyCode"
+                app:layout_constraintTop_toTopOf="@+id/cvFlag" />
 
             <TextView
+                android:id="@+id/tvCurrencyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_2dp"
-                android:text="Bangladeshi Taka-Tk"
+                android:text="Bangladeshi Taka"
                 android:textSize="@dimen/_10sp"
-                app:layout_constraintEnd_toEndOf="@+id/etOne"
-                app:layout_constraintTop_toBottomOf="@+id/etOne" />
+                app:layout_constraintEnd_toEndOf="@+id/etUserCurrencyAmount"
+                app:layout_constraintTop_toBottomOf="@+id/etUserCurrencyAmount" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ivFlagOne"
+                android:id="@+id/cvFlagOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
                 app:cardCornerRadius="@dimen/_4dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivFlag">
+                app:layout_constraintTop_toBottomOf="@+id/tvCurrencyName">
 
                 <ImageView
+                    android:id="@+id/ivFlagOne"
                     android:layout_width="@dimen/_35dp"
                     android:layout_height="@dimen/_35dp"
                     android:background="@drawable/flag_custom_design"
-                    android:clipToOutline="true"
-                    android:src="@drawable/usa" />
+                    android:clipToOutline="true" />
             </androidx.cardview.widget.CardView>
 
 
             <TextView
-                android:id="@+id/tvCountryNameOne"
+                android:id="@+id/tvCurrencyCodeOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_outline_border"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                 android:drawablePadding="@dimen/_5dp"
                 android:padding="@dimen/_5dp"
-                android:text="USD"
+                android:text="AUD"
+                android:textColor="#808080"
                 android:textSize="@dimen/_17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivFlagOne"
-                app:layout_constraintStart_toStartOf="@+id/tvCountryName"
-                app:layout_constraintTop_toTopOf="@id/ivFlagOne" />
+                app:layout_constraintBottom_toBottomOf="@+id/cvFlagOne"
+                app:layout_constraintStart_toStartOf="@+id/tvCurrencyCode"
+                app:layout_constraintTop_toTopOf="@id/cvFlagOne" />
 
             <EditText
-                android:id="@+id/etTwo"
+                android:id="@+id/etUserCurrencyAmountOne"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10dp"
@@ -175,54 +177,56 @@
                 android:hint="0"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
-                android:textSize="@dimen/_17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivFlagOne"
+                android:textSize="@dimen/_30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvFlagOne"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvCountryNameOne"
-                app:layout_constraintTop_toTopOf="@+id/ivFlagOne" />
+                app:layout_constraintStart_toEndOf="@+id/tvCurrencyCodeOne"
+                app:layout_constraintTop_toTopOf="@+id/cvFlagOne" />
 
             <TextView
+                android:id="@+id/tvCurrencyNameOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_2dp"
-                android:text="United States Doler-$"
+                android:text="Azerbaijan new manat"
                 android:textSize="@dimen/_10sp"
-                app:layout_constraintEnd_toEndOf="@+id/etTwo"
-                app:layout_constraintTop_toBottomOf="@+id/etTwo" />
+                app:layout_constraintEnd_toEndOf="@+id/etUserCurrencyAmountOne"
+                app:layout_constraintTop_toBottomOf="@+id/etUserCurrencyAmountOne" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ivFlagTwo"
+                android:id="@+id/cvFlagTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
                 app:cardCornerRadius="@dimen/_4dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivFlagOne">
+                app:layout_constraintTop_toBottomOf="@+id/tvCurrencyNameOne">
 
                 <ImageView
+                    android:id="@+id/ivFlagTwo"
                     android:layout_width="@dimen/_35dp"
                     android:layout_height="@dimen/_35dp"
-                    android:background="@drawable/flag_custom_design"
-                    android:src="@drawable/germany" />
+                    android:background="@drawable/flag_custom_design" />
             </androidx.cardview.widget.CardView>
 
 
             <TextView
-                android:id="@+id/tvCountryNameTwo"
+                android:id="@+id/tvCurrencyCodeTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_outline_border"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                 android:drawablePadding="@dimen/_5dp"
                 android:padding="@dimen/_5dp"
-                android:text="EUR"
+                android:text="AZN"
+                android:textColor="#808080"
                 android:textSize="@dimen/_17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivFlagTwo"
-                app:layout_constraintStart_toStartOf="@+id/tvCountryNameOne"
-                app:layout_constraintTop_toTopOf="@id/ivFlagTwo" />
+                app:layout_constraintBottom_toBottomOf="@+id/cvFlagTwo"
+                app:layout_constraintStart_toStartOf="@+id/tvCurrencyCodeOne"
+                app:layout_constraintTop_toTopOf="@id/cvFlagTwo" />
 
             <EditText
-                android:id="@+id/etThree"
+                android:id="@+id/etUserCurrencyAmountTwo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10dp"
@@ -231,20 +235,21 @@
                 android:hint="0"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
-                android:textSize="@dimen/_17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivFlagTwo"
+                android:textSize="@dimen/_30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvFlagTwo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvCountryNameTwo"
-                app:layout_constraintTop_toTopOf="@+id/ivFlagTwo" />
+                app:layout_constraintStart_toEndOf="@+id/tvCurrencyCodeTwo"
+                app:layout_constraintTop_toTopOf="@+id/cvFlagTwo" />
 
             <TextView
+                android:id="@+id/tvCurrencyNameTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_2dp"
-                android:text="Euro-€"
+                android:text="Australian Doller"
                 android:textSize="@dimen/_10sp"
-                app:layout_constraintEnd_toEndOf="@+id/etThree"
-                app:layout_constraintTop_toBottomOf="@+id/etThree" />
+                app:layout_constraintEnd_toEndOf="@+id/etUserCurrencyAmountTwo"
+                app:layout_constraintTop_toBottomOf="@+id/etUserCurrencyAmountTwo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -256,7 +261,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivFlagTwo"
+                app:layout_constraintTop_toBottomOf="@+id/cvFlagTwo"
                 app:layout_constraintVertical_bias=".8" />
 
 

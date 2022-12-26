@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop=".1dp"
+        app:cardElevation="@dimen/_5dp"
+        app:contentPadding="@dimen/_10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCountryFlag"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                app:cardCornerRadius="@dimen/_4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivCountryFlag"
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_50dp"
+                    android:src="@drawable/bangladesh" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvCurrencyAbbreviation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:padding="@dimen/_2dp"
+                android:text="BDT"
+                android:textColor="#E91E63"
+                android:textSize="@dimen/_17sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/cvCountryFlag"
+                app:layout_constraintTop_toTopOf="@id/cvCountryFlag" />
+
+            <TextView
+                android:id="@+id/tvCurrencyFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2dp"
+                android:text="Bangladeshi Taka"
+                android:textColor="#808080"
+                android:textSize="@dimen/_13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cvCountryFlag"
+                app:layout_constraintStart_toStartOf="@+id/tvCurrencyAbbreviation"
+                app:layout_constraintTop_toBottomOf="@+id/tvCurrencyAbbreviation" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -4,6 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.example.calculatorlockdemo.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Constants {
 
     //method to convert your text to image---------------------------------------
@@ -20,5 +25,26 @@ public class Constants {
         Canvas canvas = new Canvas(image);
         canvas.drawText(text, 0, baseline, paint);
         return image;
+    }
+
+
+    //create a country  flag list-----------------
+    public static List<Integer> countryFlagList() {
+        List<Integer> list = new ArrayList<>();
+        list.add(R.drawable.argentina);
+        list.add(R.drawable.armenia);
+        list.add(R.drawable.australia);
+        list.add(R.drawable.azerbaijan);
+        list.add(R.drawable.bangladesh);
+        list.add(R.drawable.brazil);
+        list.add(R.drawable.belgium);
+        list.add(R.drawable.cameroon);
+        list.add(R.drawable.canada);
+        list.add(R.drawable.china);
+        list.add(R.drawable.costar_ica);
+        list.add(R.drawable.croatia);
+        list.add(R.drawable.denmark);
+        list.add(R.drawable.france);
+        return list;
     }
 }

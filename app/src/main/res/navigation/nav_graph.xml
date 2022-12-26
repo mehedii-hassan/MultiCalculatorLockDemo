@@ -18,12 +18,36 @@
         <action
             android:id="@+id/actionCalculatorFragment"
             app:destination="@id/normalCalculatorFragment"
-            app:popUpTo="@id/BMIFragment"
+            app:popUpTo="@id/currencyConverterFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/currencyConverterFragment"
         android:name="com.example.calculatorlockdemo.ui.fragments.CurrencyConverterFragment"
         android:label="fragment_currency_converter"
-        tools:layout="@layout/fragment_currency_converter" />
+        tools:layout="@layout/fragment_currency_converter" >
+        <action
+            android:id="@+id/actionCCToCalculatorFragment"
+            app:destination="@id/normalCalculatorFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/currencyConverterFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionToChangeCF"
+            app:destination="@id/changeCurrencyFragment"
+            app:popUpTo="@id/currencyConverterFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeCurrencyFragment"
+        android:name="com.example.calculatorlockdemo.ui.fragments.ChangeCurrencyFragment"
+        android:label="fragment_change_currency"
+        tools:layout="@layout/fragment_change_currency" >
+        <action
+            android:id="@+id/actionChangeCFToCCF"
+            app:destination="@id/currencyConverterFragment"
+            app:popUpTo="@id/changeCurrencyFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
