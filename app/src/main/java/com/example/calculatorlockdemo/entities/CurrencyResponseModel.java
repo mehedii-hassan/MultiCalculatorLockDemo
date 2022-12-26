@@ -1,10 +1,7 @@
 package com.example.calculatorlockdemo.entities;
 
-import androidx.room.Entity;
-
 import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "tbl_currency_response")
 public class CurrencyResponseModel {
 
 	public CurrencyResponseModel(Rates rates) {

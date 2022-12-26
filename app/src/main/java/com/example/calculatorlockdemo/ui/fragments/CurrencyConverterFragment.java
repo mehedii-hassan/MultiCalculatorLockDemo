@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.example.calculatorlockdemo.R;
 import com.example.calculatorlockdemo.callbacks.CurrencyCallback;
 import com.example.calculatorlockdemo.databinding.FragmentCurrencyConverterBinding;
-import com.example.calculatorlockdemo.db.DB;
 import com.example.calculatorlockdemo.entities.CurrencySymbolResponseModel;
 import com.example.calculatorlockdemo.entities.CurrencyResponseModel;
 import com.example.calculatorlockdemo.entities.Rates;
@@ -133,6 +132,8 @@ public class CurrencyConverterFragment extends Fragment implements View.OnClickL
             }
         });
 
+
+        //api test-----
         Call<CurrencyResponseModel> call = RetrofitService.getService().getData(api_key);
         call.enqueue(new Callback<CurrencyResponseModel>() {
             @Override
@@ -141,7 +142,6 @@ public class CurrencyConverterFragment extends Fragment implements View.OnClickL
                 if (response.isSuccessful()) {
                     Log.e("TAG", "" + response.body().getRates().getBDT());
                     Rates model = response.body().getRates();
-                    DB.getDb(getContext()).getDao().insert(new CurrencyResponseModel(model));
                 }
             }
 
