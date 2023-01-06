@@ -47,4 +47,19 @@ public class Constants {
         list.add(R.drawable.france);
         return list;
     }
+
+    //Home fragment all files icon list ---------------
+    public static List<Integer> fileIconList() {
+        List<Integer> filesIconList = new ArrayList<>();
+        filesIconList.add(R.drawable.cal_gallery_icon);
+        filesIconList.add(R.drawable.cal_video_icon);
+        filesIconList.add(R.drawable.cal_audio_icon);
+        filesIconList.add(R.drawable.cal_notes_icon);
+        filesIconList.add(R.drawable.cal_document_icon);
+        filesIconList.add(R.drawable.cal_app_lock_icon);
+        filesIconList.add(R.drawable.cal_recycler_bin_icon);
+        filesIconList.add(R.drawable.cal_settings_icon);
+        return filesIconList;
+    }
+
 }

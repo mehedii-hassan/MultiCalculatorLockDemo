@@ -239,6 +239,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             }
         }
 
+
         String finalString = userInputString.replaceAll("×", "*").replaceAll("÷", "/");
         outputString = getResult(finalString);
         if (!outputString.equals("Err")) {
@@ -302,6 +303,9 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     }
 
     private void equalClicked() {
+        if (userInputString.equals("1111")) {
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.actionToHomeFragment);
+        }
         if (!outputString.equals("Err")) {
             binding.etUserInput.setText(outputString);
             binding.tvOutput.setText("");

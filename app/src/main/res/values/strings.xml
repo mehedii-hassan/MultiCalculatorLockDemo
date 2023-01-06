@@ -36,6 +36,7 @@
     <string name="obeseClassTwo">Obese class II</string>
     <string name="obeseClassThree">Obese class II</string>
     <string name="doubleZero">00</string>
+    <string name="r">R</string>
 
     //create an string array for currency name
     <string-array name="CurrencyNames">
@@ -72,6 +73,18 @@
         <item>DKK</item>
         <item>EUR</item>
 
+    </string-array>
+
+    //
+    <string-array name="FileNames">
+        <item>Gallery</item>
+        <item>Video</item>
+        <item>Audio</item>
+        <item>Notes</item>
+        <item>Documents</item>
+        <item>App Lock</item>
+        <item>Recycler Bin</item>
+        <item>Setting</item>
     </string-array>
 
 </resources>

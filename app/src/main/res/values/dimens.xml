@@ -71,5 +71,6 @@
     <dimen name="_200dp">200dp</dimen>
     <dimen name="_40dp">40dp</dimen>
     <dimen name="_43dp">43dp</dimen>
+    <dimen name="_40sp">40sp</dimen>
 
 </resources>

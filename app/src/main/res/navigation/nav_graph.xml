@@ -9,7 +9,13 @@
         android:id="@+id/normalCalculatorFragment"
         android:name="com.example.calculatorlockdemo.ui.fragments.CalculatorFragment"
         android:label="fragment_normal_calculator"
-        tools:layout="@layout/fragment_calculator" />
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/actionToHomeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/normalCalculatorFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/BMIFragment"
         android:name="com.example.calculatorlockdemo.ui.fragments.BMIFragment"
@@ -50,4 +56,9 @@
             app:popUpTo="@id/changeCurrencyFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.calculatorlockdemo.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>
