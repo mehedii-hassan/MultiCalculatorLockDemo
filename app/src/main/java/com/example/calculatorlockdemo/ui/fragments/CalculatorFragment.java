@@ -166,7 +166,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
                 createUserInputString("ln");
                 break;
             case R.id.fabSquare:
-                //createUserInputString("fact");
+                squareCalculate();
                 break;
             case R.id.fabPISc:
                 createUserInputString("3.14");
@@ -197,6 +197,31 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         }
     }
 
+    private void squareCalculate() {
+        if (userInputString.isEmpty()) {
+            binding.etUserInput.setText("");
+            return;
+        }
+        boolean lastCharSquareOrNot = checkLastCharSquareOrNot(userInputString.charAt(userInputString.length() - 1));
+        if (lastCharSquareOrNot) {
+            binding.etUserInput.setText(userInputString);
+            return;
+        }
+        String temp = userInputString;
+        userInputString = userInputString + "²";
+        int userInput = Integer.parseInt(temp);
+        int res = userInput * userInput;
+        outputString = String.valueOf(res);
+        binding.etUserInput.setText(userInputString);
+        binding.tvOutput.setText(String.valueOf(outputString));
+        userInputString=outputString;
+
+    }
+
+    private boolean checkLastCharSquareOrNot(char ch) {
+        return ch == '²';
+    }
+
 
     //Create user input string for calculation----------------------------
     private void createUserInputString(String userInput) {
@@ -221,7 +246,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             if (userInputString.length() != 0) {
                 int l = userInputString.length();
                 //Check user input inputStringLastCharOperator or not-----------------------------------------
-                boolean inputStringLastCharOperator = checkOperatorOrNot(userInputString.charAt(l - 1));
+                boolean inputStringLastCharOperator = checkLastCharOperatorOrNot(userInputString.charAt(l - 1));
                 boolean lastCharPointOrNot = checkPointOrNot(userInputString.charAt(l - 1));
                 if (lastCharPointOrNot && isNumeric(userInput)) {
                     if (userInput.equals(".")) {
@@ -247,11 +272,12 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         }
     }
 
+
     private boolean checkPointOrNot(char c) {
         return c == '.';
     }
 
-    private boolean checkOperatorOrNot(char ch) {
+    private boolean checkLastCharOperatorOrNot(char ch) {
         return ch == '+' || ch == '-' || ch == '×' || ch == '÷' || ch == '.';
     }
 

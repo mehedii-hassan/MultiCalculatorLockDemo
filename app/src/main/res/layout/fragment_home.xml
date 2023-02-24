@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/_4dp"
-            android:text="Multi Cal Lock"
+            android:text="Cal Lock"
             android:textColor="#808080"
             android:textSize="@dimen/_30sp"
             android:textStyle="bold"
@@ -257,7 +257,8 @@
             app:fabSize="normal"
             app:layout_constraintBottom_toTopOf="@+id/glMiddleHome"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="#4CAF50" />
+            app:tint="#4CAF50"
+            android:contentDescription="TODO" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabListHome"
@@ -271,7 +272,8 @@
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="@+id/fabGridHome"
             app:layout_constraintEnd_toStartOf="@+id/fabGridHome"
-            app:tint="#9C27B0" />
+            app:tint="#9C27B0"
+            android:contentDescription="TODO" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clHome"
@@ -303,6 +305,7 @@
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="TODO" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
